@@ -1,0 +1,718 @@
+﻿// Hopefully any settings that need to change will be here
+
+/* 
+
+    //Small devices (tablets, 768px and up)
+    @media (min-width: @screen-sm-min) {
+      // ... code ...
+    }
+    
+    // Medium devices (desktops, 992px and up) 
+    @media (min-width: @screen-md-min) { 
+      // ... code ...
+    }
+
+    // Large devices (large desktops, 1200px and up) 
+    @media (min-width: @screen-lg-min) { 
+      // ... code ...
+    }
+
+*/
+
+
+// test colors
+  .color-samples {display: none;}
+  .color-tests {display:inline-block;}
+  .test-shape { height: 50px; width:12%; margin: 10px; }
+
+  .color-tests { .test-shape }
+       .color-Nav { background: @rouge }
+       .color-A { background: @cuivre }
+       .color-B { background: @gris }
+       .color-C { background: @bleu }
+       .color-D { background: @bleu-logo }
+       .color-E { background: @vert }
+       .color-F { background: @marron }
+
+
+// =========== Custom background =====================
+
+  //  mixin gradient for html background
+    .website-bg-gradient  (@start-color: lighten(@bg-grad-top, 10%); 
+                          @mid-color1: @bg-grad-top; @color-stop1: 15%;
+                          @end-color: @bg-grad-bottom) {
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop1, @mid-color1), to(@end-color));
+      background-image: -webkit-linear-gradient(@start-color, @mid-color1 @color-stop1, @end-color);
+      background-image: -moz-linear-gradient(top, @start-color, @mid-color1 @color-stop1, @end-color);
+      background-image: linear-gradient(@start-color, @mid-color1 @color-stop1, @end-color);
+      background-repeat: no-repeat;
+      filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+    }
+
+  // mixin shadow inset at top of window
+    .website-top-shadow (@string: 0 0 25px rgba(0, 0, 0, 0.25)) {
+      -webkit-box-shadow: @string;
+      -moz-box-shadow:    @string;
+      box-shadow:         @string;
+    }
+
+  html {
+      margin: 0;
+      background-repeat: no-repeat;
+      
+      // background gradient mixin
+      .website-bg-gradient;
+
+  }
+
+  body {
+    // bg image in "body" position to the left
+    background: url(../img/Licorne-tete.png) no-repeat -5% 90%;
+      
+    // bg image in "div.bg-deco-right" position to the right 
+    .bg-deco-right {
+      background: url(../img/Licorne-queue.png) no-repeat 103% 70%;
+    }
+
+    // shadow at top of window
+    &:before {
+    content: "";
+    position: fixed;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 100;
+    //  mixin for shadow inset at top of window
+    .website-top-shadow;
+  }
+}
+
+
+  header.logo-container {
+
+    /* Small devices (tablets, 768px and up) */
+    @media (min-width: @screen-sm-min) {
+      margin-bottom: 86px;
+    }
+    
+    /* Medium devices (desktops, 992px and up) */
+    @media (min-width: @screen-md-min) { 
+      margin-bottom: 112px;
+    }
+
+    /* Large devices (large desktops, 1200px and up) */
+    @media (min-width: @screen-lg-min) { 
+      margin-bottom: 135px;
+    }
+
+    img.logo-small {
+      max-width: 50%;
+      min-width: 250px;
+      margin: auto;
+      margin-bottom: -5%;
+    }
+
+    img.clouds, img.logo-big {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: -1;
+
+      /* Small devices (tablets, 768px and up) */
+      @media (min-width: @screen-sm-min) {
+        margin-left: -490px;
+        width: 979px;
+      }
+      
+      /* Medium devices (desktops, 992px and up) */
+      @media (min-width: @screen-md-min) { 
+        margin-left: -646px;
+        width: 1292px;
+      }
+
+      /* Large devices (large desktops, 1200px and up) */
+      @media (min-width: @screen-lg-min) { 
+        margin-left: -788px;
+        width: 1577px;
+      }
+    }
+  }
+
+// ----------- /end Custom background ------------------
+
+  // ================ Typography base ================
+    // Add style for overlock display font (eg. italic)
+    // go to custom-variables.less line 87
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      font-style: @headings-font-style;
+    }
+    // ========== Links ==============
+      a {
+        // color: @link-color;
+        // text-decoration: none;
+
+        &:hover,
+        &:focus {
+          // color: @link-hover-color;
+          text-decoration: none;
+        }
+
+        &:focus {
+          .tab-focus();
+        }
+      }
+    // ----------- /end Links -----------
+  // ------------- /end Typography ---------------
+
+// ============= wrapper ============
+  .wrapper { 
+    // display: none;
+  }
+  .bg-content {
+    background-color: fade(@ciel, 50%);
+  }
+// ----------- /end wrapper --------------
+
+
+// =============== Navbar custom settings ==================================
+// other navbar settings can be found in custom-variables.less line 270
+
+  // background mixins
+    .nav-inner-shadow (@x: 0, @y: 0, @blur: 20px, @spread: 0, @alpha: 0.3) {
+      -webkit-box-shadow: inset @x @y @blur @spread rgba(255, 255, 255, @alpha);
+      -moz-box-shadow:    inset @x @y @blur @spread rgba(255, 255, 255, @alpha);
+      box-shadow:         inset @x @y @blur @spread rgba(255, 255, 255, @alpha);
+    }
+    .nav-inner-shadow-hover (@x: 0, @y: 0, @blur: 20px, @spread: 0, @nav-inner-shadow-color: fade(lighten(@nav-color, 50%), 30%)) {
+      -webkit-box-shadow: inset @x @y @blur @spread @nav-inner-shadow-color;
+      -moz-box-shadow:    inset @x @y @blur @spread @nav-inner-shadow-color;
+      box-shadow:         inset @x @y @blur @spread @nav-inner-shadow-color;
+    }
+    .nav-inner-shadow-active (@x: 0, @y: 0, @blur: 20px, @spread: 0, @nav-inner-shadow-color: fade(darken(@nav-color, 50%), 15%)) {
+      -webkit-box-shadow: inset @x @y @blur @spread @nav-inner-shadow-color;
+      -moz-box-shadow:    inset @x @y @blur @spread @nav-inner-shadow-color;
+      box-shadow:         inset @x @y @blur @spread @nav-inner-shadow-color;
+    }
+    .nav-radial(@inner-color: lighten(@nav-color, 5%); @outer-color: fade(shade(@nav-color, 5%), 60%)) {
+      background-image: -webkit-gradient(radial, center center, 0, center center, 460, from(@inner-color), to(@outer-color));
+      background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+      background-image: -moz-radial-gradient(circle, @inner-color, @outer-color);
+      background-image: radial-gradient(circle, @inner-color, @outer-color);
+      background-repeat: no-repeat;
+    }
+    .nav-bg-gradient  (@start-color: lighten(@nav-color, 15%); 
+                      @mid-color1: @nav-color; @color-stop1: 55%; 
+                      @mid-color2: shade(@nav-color, 20%); @color-stop2: 57%; 
+                      @end-color: shade(@nav-color, 10%)) {
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(@start-color), color-stop(@color-stop1, @mid-color1), color-stop(@color-stop2, @mid-color2), to(@end-color));
+      background-image: -webkit-linear-gradient(@start-color, @mid-color1 @color-stop1, @mid-color2 @color-stop2, @end-color);
+      background-image: -moz-linear-gradient(top, @start-color, @mid-color1 @color-stop1, @mid-color2 @color-stop2, @end-color);
+      background-image: linear-gradient(@start-color, @mid-color1 @color-stop1, @mid-color2 @color-stop2, @end-color);
+      background-repeat: no-repeat;
+      filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+    }
+
+  // navbar variables are in @custom-variables.less @line 90
+  .dropdown-menu {
+    font-family:      @navbar-font-family;
+    font-style:       @navbar-font-style;
+    font-weight:      @navbar-font-weight;
+    font-size:        @navbar-font-size;
+    text-transform:   @navbar-text-transform;
+  }
+
+  .navbar-default {
+    font-family:      @navbar-font-family;
+    font-style:       @navbar-font-style;
+    font-weight:      @navbar-font-weight;
+    font-size:        @navbar-font-size;
+    text-transform:   @navbar-text-transform;
+
+    // colapsed menu glyph button
+    .navbar-toggle {
+      color: @navbar-default-link-color;
+      margin: auto;
+      width: 100%;
+      height: 30px;
+      border: none;
+
+      &:hover, 
+      &:focus {
+        // background-color:  darken(@navbar-default-link-hover-bg, 5%);
+        color: @navbar-default-link-hover-color;
+      }
+      &:active {
+        color: @navbar-default-link-active-color;
+      }
+    }
+
+    // apply mixin from above for navbar background
+    @media (min-width: @screen-sm-min) {
+      .nav-bg-gradient;
+      .nav-inner-shadow;
+    }
+
+    .navbar-nav {
+      > li > a {
+
+        // add padding between links @custom-variable.less @line-96
+          /* Small devices (tablets, 768px and up) */
+          @media (min-width: @screen-sm-min) {
+          padding-left:   @navbar-manual-spacing - .7;
+          padding-right:  @navbar-manual-spacing - .7;
+          }
+          
+          /* Medium devices (desktops, 992px and up) */
+          @media (min-width: @screen-md-min) { 
+          padding-left:   @navbar-manual-spacing; //100%
+          padding-right:  @navbar-manual-spacing; //100%
+          }
+
+          /* Large devices (large desktops, 1200px and up) */
+          @media (min-width: @screen-lg-min) { 
+          padding-left:   @navbar-manual-spacing + .5;
+          padding-right:  @navbar-manual-spacing + .5;
+          }
+
+        &:hover,
+        &:focus {
+          // background
+          // background-color: orange;
+
+          // custom lighting effect on hover
+          @media (min-width: @screen-sm-min) {
+            .nav-radial;
+            .nav-inner-shadow-hover;
+          }
+
+        }
+        &:active {
+          // custom lighting effect on active
+          .nav-inner-shadow-active;
+        }
+      }
+      > .active > a {
+
+
+        &,
+        &:hover,
+        &:focus {
+
+          // custom lighting effect on focus
+          @media (min-width: @screen-sm-min) {
+            .nav-radial;
+          }
+          background: darken(@navbar-default-link-hover-bg, 5%);
+
+        }
+      }
+    }
+  }
+
+  .navbar{
+    min-height:@navbar-height; 
+    margin: 0px;
+  }
+  .navbar-nav > li > a {
+    padding-top:@nav-padding !important; 
+    padding-bottom:@nav-padding !important;
+  }
+
+  // for disabled links (ie: disabled menu item or any other link)
+  .disabled {
+    text-decoration: line-through;
+  }
+// -------------- /end Navbar custom settings ----------------------
+
+// ================= breadcrumb ===================== 
+  .breadcrumb {
+    font-size: .7em;
+    a {
+      text-decoration: none;
+    }
+  }
+// -------------- /end breadcrumb ----------------- 
+
+// ================= banner ===================== 
+  // variables and mixins for banner
+  @banner-shadow-color: shade(@gris, 20%);
+  .banner-filter-drop-shadow (@x: 3px, @y: 0, @blur: 0) {
+    -webkit-filter: drop-shadow(@x @y @blur @banner-shadow-color);
+    -moz-filter: drop-shadow(@x @y @blur @banner-shadow-color);
+    -ms-filter: drop-shadow(@x @y @blur @banner-shadow-color);
+    -o-filter: drop-shadow(@x @y @blur @banner-shadow-color);
+    filter: drop-shadow(@x @y @blur @banner-shadow-color);
+  }
+
+
+  div.banner {
+    background-color: tint(@ciel, 60%);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 6px 6px 6px 6px;
+    border: 1px solid lighten(@gris, 20%);
+  } 
+
+  div.banner-label {
+
+    text-shadow:   0px 1px 0px tint(@gris, 40%), 
+                  0px -1px 0px shade(@gris, 70%);
+    background-color: @gris;
+    border-radius: 6px 0 0 6px;
+    padding-bottom: 10px;
+    border: 2px solid shade(@gris, 20%);
+    border-right: none;
+    .banner-filter-drop-shadow;
+    
+    // arrow shape
+    // ===========
+    // &:before {
+    //   z-index: 0;
+    //   content:"";
+    //   position: absolute;
+    //   left: 100%;
+    //   top: 2.5%;
+    //   width:0;
+    //   height: 95%;
+    //   border-top:     3.3em solid transparent;
+    //   border-left:    .8em   solid shade(@gris, 0%);
+    //   border-bottom:  3.3em solid transparent;
+    // }
+
+    h3, h4 {
+      font-weight: normal;
+      font-family: @font-family-display;
+      font-style: italic;
+    }
+    .category {
+      color: @gray-lighter;
+      font-size: 1.25em;
+      letter-spacing: .15em;
+    }
+    // .banner-name {
+    //   color: @gray-dark;
+    //   font-size: .9em;
+    //   text-transform: uppercase;
+    //   letter-spacing: 1em;
+    // }
+  }
+
+  .banner-article {
+    padding-left: 20px;
+    padding-top: 15px;
+
+    h2 {
+      font-size: 1.75em;
+      margin-top: 0;
+
+    }
+  }
+// --------------- /end banner ------------------ 
+
+
+// ================= showcase ===================== 
+
+  //mixins for showcase
+    @radius: 16px;
+    .showcase-radius {
+      border-bottom-right-radius: @radius;
+         border-top-right-radius: @radius;
+    }
+    @showing-shadow-color: tint(@gris, 30%);
+    .showing-box-shadow(@x: 7px, @y: 0, @blur: 0, @spread: -5px) {
+      -webkit-box-shadow: @x @y @blur @spread @showing-shadow-color; // iOS <4.3 & Android <4.1
+              box-shadow: @x @y @blur @spread @showing-shadow-color;
+    }
+    @show-image-shadow-color: shade(@gris, 30%);
+    // .show-image-shadow {
+    //   -webkit-box-shadow: 0 1px 0 0 @show-image-shadow-color, 
+    //                       0 -1px 0 0 @show-image-highlight-color; // iOS <4.3 & Android <4.1
+    //           box-shadow: 0 1px 0 0 @show-image-shadow-color,
+    //                       0 -1px 0 0 @show-image-highlight-color;
+    // }
+    @show-image-highlight-color: tint(@gris, 70%);
+    // .show-image-highlight(@x1: -1px, @x2: 5px, @y1: -1px, @y2: 5px, @blur: 5px, @spread: 0px) {
+    //   -webkit-box-shadow: @x1 @y1 @blur @spread @show-image-shadow-color,
+    //                       @x2 @y2 @blur @spread @show-image-highlight-color; // iOS <4.3 & Android <4.1
+    //           box-shadow: @x1 @y1 @blur @spread @show-image-shadow-color,
+    //                       @x2 @y2 @blur @spread @show-image-highlight-color;
+    // }
+
+
+  #showcase {
+    margin-bottom: 20px;
+
+    header {
+      background-color: fadeout(@bleu-logo, 70%);
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      text-align: center;
+      h1 {
+        font-family: @font-family-display;
+        font-style: italic;
+        font-size: 1.25em;
+        display: inline-block;
+        margin: 0;
+        padding-right: 1em;
+        color: @bleu-logo;
+        text-shadow: 0 1px 1px @ciel;
+      }
+      p {
+        color: @bleu-logo;
+        text-shadow: 0 1px 1px @ciel;
+        margin: 0;
+        display: inline-block;
+      }
+    }
+    .showcase-image {
+      padding: 0;
+
+      .showcase-photo{
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        padding-right: 0;
+      }
+    }
+
+    .showcase-texts {
+      padding-left: 0;
+      padding-right: 2px;
+
+        .showing {
+          background-color: tint(@ciel, 30%);
+          .showing-box-shadow;
+        }
+        .not-showing {
+          opacity: .5;
+          &:hover {
+            opacity: 1;
+        }
+        
+      }
+
+      .showcase-article {
+        .showcase-radius; // rounded edge mixin
+        border: 1px solid shade(@ciel, 10%);
+        padding: 10px;
+        padding-left: 20px; //gutter width
+
+        .category {
+          font-family: @font-family-display;
+          font-style: italic;
+          color: @gray-light;
+          font-size: 1.25em;
+          letter-spacing: .15em;
+          text-shadow:  0px 1px 0px tint(@gris, 90%), 
+                        0px -1px 0px shade(@gris, 50%);
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        h2 {
+          color: @bleu;
+          font-size: 1.5em;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        p {
+
+        }
+      }
+    }
+  }
+// -------------- /end showcase --------------------
+
+// resize images to fit column width
+// temporary styling WIP
+
+  #maps, #forum {
+      h1 {
+      border-top-left-radius: 7px;
+         border-top-right-radius: 7px;
+
+        background-color: tint(@bleu-logo, 30%);
+        font-family: @font-family-display;
+        font-style: italic;
+        font-size: 1em;
+        color: @ciel;
+        text-align: center;
+        padding: 5px;
+      }
+      h3 {
+        font-size: 1.25em;
+      }
+    img {
+      width: 100%;
+      max-width: 40%;
+      float: left;
+      padding-right: 10px;
+
+      //Small devices (tablets, 768px and up)
+      @media (min-width: @screen-sm-min) {
+        max-width: 100%;
+        display: block;
+        clear: both;
+      }
+
+      // Medium devices (desktops, 992px and up) 
+      @media (min-width: @screen-md-min) { 
+
+      }
+
+      // Large devices (large desktops, 1200px and up) 
+      @media (min-width: @screen-lg-min) { 
+      }
+
+    }
+  }
+
+  #forum {
+    img {
+      width: 55px;
+      float: left;
+      padding-right: 10px;
+    }
+  }
+
+// ================= news ============================
+  // resize images to fit column width
+    #news {
+      img {
+        width: 100%;
+        max-width: 40%;
+        float: left;
+        padding-right: 10px;
+
+        //Small devices (tablets, 768px and up)
+        @media (min-width: @screen-sm-min) {
+          max-width: 100%;
+          display: block;
+          clear: both;
+        }
+
+        // Medium devices (desktops, 992px and up) 
+        @media (min-width: @screen-md-min) { 
+
+        }
+
+        // Large devices (large desktops, 1200px and up) 
+        @media (min-width: @screen-lg-min) { 
+        }
+
+      }
+    }
+  .nav-tabs {
+    background-color: shade(@nav-tabs-link-color, 10%);
+    a {
+      color: shade(@nav-tabs-link-color, 40%);
+      font-weight: bold;
+      &:hover {
+        color: shade(@nav-tabs-link-color,)
+      }
+    }
+  }
+  .news {
+    position: relative;
+    z-index: 0;
+    border-top: none;
+    background-color: shade(@nav-tabs-link-color, 0%);
+    padding: 10px;
+  }
+// -------------- /end news --------------------------
+
+// ================= agenda ============================
+    //mixins for agenda
+    .agenda-label {
+      border-top-left-radius: 7px;
+         border-top-right-radius: 7px;
+    }
+    #agenda {
+      h1 {
+        .agenda-label;
+        background-color: @nav-color;
+        font-family: @font-family-display;
+        font-style: italic;
+        font-size: 1em;
+        color: @ciel;
+        text-align: center;
+        padding: 5px;
+      }
+      h3 {
+        font-size: 1.25em;
+      }
+      // resize images to fit column width
+      img {
+        width: 50%;
+        max-width: 40%;
+        float: left;
+        padding-right: 10px;
+
+        //Small devices (tablets, 768px and up)
+        @media (min-width: @screen-sm-min) {
+          max-width: 100%;
+          display: block;
+          clear: both;
+        }
+
+        // Medium devices (desktops, 992px and up) 
+        @media (min-width: @screen-md-min) { 
+
+        }
+
+        // Large devices (large desktops, 1200px and up) 
+        @media (min-width: @screen-lg-min) { 
+        }
+
+      }
+    }
+// --------------- /end agenda --------------------------
+
+// ================= footer ============================
+  .footer-container {
+    margin-top: 20px;
+    height: 200px;
+    padding-top: 30px;
+    border: 1px solid shade(@bleu, 20%);
+    background-color: desaturate(@bleu, 10%);
+    color: tint(@bleu, 40%);
+    border-radius: 5px;
+  }
+
+// --------------- /end footer -------------------------
+
+
+
+// -----------------------------------
+// reference cheatsheet for LESS functions
+// -----------------------------------
+  // saturate(@color, 10%);                  
+    // return a color 10% points *more* saturated
+  // desaturate(@color, 10%);                
+    // return a color 10% points *less* saturated
+  // lighten(@color, 10%);                   
+    // return a color 10% points *lighter*
+  //darken(@color, 10%);                   
+    // return a color 10% points *darker*
+  //fadein(@color, 10%);                   
+    // return a color 10% points *less* transparent
+  //fadeout(@color, 10%);                  
+    // return a color 10% points *more* transparent
+  //fade(@color, 50%);                     
+    // return @color with 50% transparency
+  //spin(@color, 10);                      
+    // return a color with a 10 degree larger in hue
+  //mix(@color1, @color2, [@weight: 50%]); 
+    // return a mix of @color1 and @color2
+  //tint(@color, 10%);                     
+    // return a color mixed 10% with white
+  //shade(@color, 10%);                    
+    // return a color mixed 10% with black
+  //greyscale(@color);                     
+    // returns a grey, 100% desaturated color
+  //contrast(@color1, [@darkcolor: black], [@lightcolor: white], [@threshold: 43%]);  
+  //  // return @darkcolor if @color1 is > 43% luma
+    // otherwise return @lightcolor, see notes

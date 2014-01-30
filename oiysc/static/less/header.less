@@ -1,0 +1,78 @@
+﻿// ============ header (logo and nav) ========
+	header.top-nav {
+		.row;
+		font-family: blokletters_balpen;
+
+		a.logo { 
+			.col(2);
+			text-align: center;
+			margin: 10px auto;
+			h1 {
+				border: 0;
+				font: 0/0 a;
+				text-shadow: none;
+				color: transparent;
+			}
+			img {
+				width:100%;
+				max-width: 150px;
+					@media screen and (min-width: 800px) {
+						width: 100%;
+					}
+			}
+		}
+
+		nav.main-menu {
+			.col(10);
+			margin-top: 30px;
+			ul { 
+				.col(9);
+
+				&.info-nav {
+					.col(3);
+				}
+				li { 
+					display: inline-block;
+					margin-left: 30px;
+					position: relative;
+					&.projects:hover {
+						ul.submenu { 
+							display: block;
+						}
+					}
+					&.calendar:hover {
+						ul.submenu { 
+							display: block;
+						}
+					}
+					&.info-menu {
+						float: right;
+							a {
+								font-size: 1em;
+								color: green;
+								@media screen and (min-width: 800px) {
+									font-size: 1.25em;
+								}
+							}
+					}
+					a {
+						text-decoration: none;
+						font-size: 1.25em;
+						color: @black;
+						@media screen and (min-width: 800px) {
+							font-size: 1.5em;
+						}
+					}
+					ul.submenu {
+						display: none;
+						position: absolute;
+						a {	
+							color: @gray;
+						}
+					}
+				}
+
+			}
+		}
+	}
+// ---------- /end header (logo and nav) -----------

@@ -1,0 +1,56 @@
+﻿// =========== background ==============
+	html {
+		background: url(../img/fabric_1.png);
+		color: @black;
+	}
+	body {
+		background-color: fade(@yellow, 10%);
+	}
+// -------- /end background ------------
+// ========= basic typography ===========
+h1, h2, h3, h4, h5, h6 { font-family: londrina; }
+// --------- /end basic typography -------
+
+// all body elements are in div.wrapper 
+.wrapper {
+	.container;
+}
+
+
+div.page-content {
+	.row;
+	margin-top: 20px;
+
+	div.left-sidebar {
+		.col(3);
+		img {
+			width: 50%;
+			@media screen and (min-width: 800px) {
+				width: 100%;
+			}
+		}
+
+	}
+
+	div.middle {
+		.col(6);
+		h3 {
+			font-size: 5em;
+		}
+	}
+
+	div.right-sidebar {
+		.col(3);
+	}
+
+}
+
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+footer {
+	text-align: center;
+}

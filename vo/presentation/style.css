@@ -1,0 +1,126 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* clearfix hack */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/* nav menu */
+
+div#menu {
+	/* background */
+	background: #45484d; /* Old browsers */
+	background: -moz-linear-gradient(top,  #45484d 0%, #000000 9%, #45484d 90%, #000000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(9%,#000000), color-stop(90%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #45484d 0%,#000000 9%,#45484d 90%,#000000 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #45484d 0%,#000000 9%,#45484d 90%,#000000 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #45484d 0%,#000000 9%,#45484d 90%,#000000 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #45484d 0%,#000000 9%,#45484d 90%,#000000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+	/*end background */
+	
+	
+	height:40px;
+	
+	position: fixed;
+	top:0px;
+	left: 50%;
+	width:1900px;
+	margin-left: -950px;
+	z-index:999;
+	opacity:0;
+
+}
+nav {
+}
+nav ul {
+	position: absolute;
+	left: 39%;
+	/* margin-left: -160px; /* Half the width */
+
+}
+nav li {
+	display:block;
+	float:left;
+	margin:15px 15px 0;
+	height:30px;
+}
+
+nav a {
+	color:#888888;
+	text-decoration:none;
+	background:#000000;
+	padding:5px 15px;
+	border-radius:10px;
+}
+nav a:hover {
+	color:#dddddd;
+}
+
+/* image */
+
+img.center-display {
+   position: absolute;
+   left: 50%;
+   width: 1900px;
+   margin-left: -950px; /* Half the width */
+   /*
+   margin-top: 40px;
+   */
+}
+
+

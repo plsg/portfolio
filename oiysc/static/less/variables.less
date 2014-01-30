@@ -1,0 +1,23 @@
+﻿// set the number of grids you want to work with
+@grid: 12;
+
+// ======= colors ============
+	@black: 	#1f1f1f;
+	@gray: 		#6f6f6f;
+	@white: 	#eee;
+	@yellow: 	#f3bf4e;
+// ------ /end colors --------
+
+// mixin for rounded corner effects
+.round-corners (@radius) {
+	border-radius:         @radius;
+}
+.round-sides (@horiz; @vertic) {
+	border-radius: 		@horiz/@vertic;
+}
+
+.inner-shadow (@x: 0, @y: 1px, @blur: 10px, @alpha: 1) {
+	-webkit-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:    inset @x @y @blur rgba(0, 0, 0, @alpha);
+	box-shadow:         inset @x @y @blur rgba(0, 0, 0, @alpha);
+}
