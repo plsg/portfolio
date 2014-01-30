@@ -895,12 +895,13 @@ article.main a:hover h2 {
 }
 footer {
   width: 100%;
-  position: absolute;
-  bottom: 0;
   margin: auto;
   color: #555555;
   background-color: #f7f7f7;
   border-bottom: 3px solid #00ff00;
+}
+footer P:first-child {
+  padding-top: 20px;
 }
 footer p {
   margin-left: 15%;
@@ -908,4 +909,26 @@ footer p {
 footer a {
   padding-left: 15%;
   display: block;
+}
+/* Mostly: http://ryanfait.com/sticky-footer/ */
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -159px;
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+footer,
+.wrapper:after {
+  /* .push must be the same height as footer */
+  height: 159px;
 }

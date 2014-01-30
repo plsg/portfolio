@@ -142,12 +142,13 @@ article.main {
 
 footer {
 	width: 100%;
-	position: absolute;
-	bottom: 0;
 	margin: auto;
 	color: @drkgray;
 	background-color: @navbar;
 	border-bottom: 3px solid @green;
+	P:first-child {
+		padding-top: 20px;
+	}
 	p {
 		margin-left: @indent;
 	}
@@ -161,4 +162,29 @@ footer {
 
 @media only screen and (min-width: 768px) {
 
+}
+
+
+
+
+/* Mostly: http://ryanfait.com/sticky-footer/ */
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+	margin-bottom: -159px; 
+}
+.wrapper:after {
+  content: "";
+  display: block;
+}
+footer, .wrapper:after {
+  /* .push must be the same height as footer */
+	height: 159px; 
 }
