@@ -22,22 +22,19 @@
 
   <body>
   <div class="bg-deco-right">
-    
-    <!-- <img src="img/Licorne-tete.png" alt="" class="bg-deco-left"> -->
-    <!-- <img src="img/Licorne-queue.png" alt="" class="bg-deco-right">  -->
 
     <!-- ====== The Main wrapper div starts ============ -->
           
     <!-- ===== header content logo + blazon ===== -->
       <header class="logo-container">
-          <img class="hidden-xs clouds" src="img/clouds.png" alt="nuages">
-          <img class="hidden-xs logo-big" src="img/logo-only.png" alt="Blazon de la Fédération Internationale de Vo Viet Nam FIVV - SLQT Son Long Quyen Thuat">
-          <img class="img-responsive visible-xs logo-small" src="img/logo-sm.png" alt="Blazon de la Fédération Internationale de Vo Viet Nam FIVV - SLQT Son Long Quyen Thuat">
+          <img class="clouds" src="img/clouds.png" alt="nuages">
+          <img class="logo-big" src="img/logo-only.png" alt="Blazon de la Fédération Internationale de Vo Viet Nam FIVV - SLQT Son Long Quyen Thuat">
+          <img class="logo-small" src="img/logo-sm.png" alt="Blazon de la Fédération Internationale de Vo Viet Nam FIVV - SLQT Son Long Quyen Thuat">
       </header>
     <!-- ===== /end header content logo + blazon ===== -->
 
-    <div class="wrapper container">
-      <div class="bg-content">
+    <div class="container">
+      <div class="bg-content"> <!-- this is a row, place columns in rows and nest rows in columns etc -->
             
  
             <!-- ============ nav menu bar ==================== -->
@@ -118,67 +115,51 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Library</a></li>
                 <li class="active">Data</li>
+                <li><a class="showBanner" href="#" onclick="toggle_visibility('banner');">afficher la bannière</a></li>
               </ol>
             <!-- ============== /end breadcrumb ============== -->
 
         <!-- =================== news banner ============== -->
-          <!--
-            <div class="col-sm-12">
-              <div class="row banner">
-                <a href="#"> 
-                  <div class="banner-label col-sm-2">
-                    <h3 class="category">Actualités Internationales</h3>
-                  </div>
-                  <div class="banner-article col-sm-10 ">
-                    <div class="row">
-                      <div class="col-sm-12">
-                        <h2>Titre de l'annonce d'une des catégories d'article Lorem Ipsum</h2>
-                      </div>
-                      <div class="col-sm-9">
-                        <p>Textes de l'article, ligula nec scelerisque consequat, dui dolor dapibus metus, sit amet molestie urna eros quis sapien dui dolor dapibus metus, sit amet molestie urna eros quis sapien.</p>
-                      </div>
-                      <div class="col-sm-3">
-                        <a class="enplus" href="#">Un texte en lien.</a>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div> 
-          -->
+          <a id="banner" href="#"> 
+              <h2>Titre de l'annonce d'une des catégories d'article Lorem Ipsum</h2>
+              <p>Textes de l'article, ligula nec scelerisque consequat, dui dolor dapibus metus, sit amet molestie urna eros quis sapien dui dolor dapibus metus, sit amet molestie urna eros quis sapien.</p>
+          </a>
         <!-- ================ /end news banner ============ -->
 
         <!-- ================= SECTION #showcase ====================== -->
-          <section id="showcase" class="showcase row">
-              <header class="col-sm-12">
-                <h1>Découvrez le Vo Vietnam.</h1>
-                <p>Voici une selection des articles du site.</p>
-              </header>
-            <!-- <div class="row"> -->
-            <div class="col-sm-12">
-              <div class="col-sm-6 showcase-image">
-                <img class="hidden-xs showcase-photo" src="img/vosinh.jpg">  
-              </div>
-              <div class="showcase-texts col-sm-6">
-                <div class="showcase-article">
-                  <h3 class="category">Duis euismod vitae bibendum</h3>
-                  <h2>Aliquam consequat blandit venenatis.</h2>
-                  <p> Mauris cursus urna ut mattis tristique. Sed id tristique neque, id posuere nibh. </p>           
-                </div>
-                <div class="showcase-article showing">
-                  <h3 class="category">Duis euismod vitae bibendum</h3>
-                  <h2> In malesuada quam vel mi aliquam vehicula.</h2>
-                  <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper felis, venenatis accumsan mauris mauris ac erat.</p>
-                </div>
-                <div class="showcase-article">
-                  <h3 class="category">Duis euismod vitae bibendum</h3>
-                  <h2>Mauris ullamcorper lacus mollis porttitor vulputate.</h2> 
-                  <p>Duis tristique dui id mi mollis, nec consequat ipsum fermentum. Cras vitae ultrices nibh, quis blandit mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis euismod risus turpis, vitae bibendum quam vestibulum sed. </p>
-                </div>   
-              </div>
-            </div> <!-- /end .col-sm-12 -->
-            <!-- </div> --> <!-- /end .row -->
+          <section id="showcase" class="showcase ">
+
+            <article class="showing">
+            <div class="showcase-image">
+              <img src="img/vosinh-16-9.jpg">  
+            </div>
+            <div class="showcase-texts">
+              <h3>Duis euismod vitae bibendum</h3>
+              <h2>Aliquam consequat blandit venenatis.</h2>
+              <p> Mauris cursus urna ut mattis tristique. Sed id tristique neque, id posuere nibh. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, eius, incidunt, inventore, ducimus nisi laudantium officiis aperiam asperiores sed fugiat accusamus officia dignissimos veritatis fugit cumque commodi laboriosam! Placeat, aut.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, inventore provident modi facere voluptate adipisci saepe deleniti error dolorum doloremque a consectetur veniam sunt rem dignissimos praesentium atque dolor eligendi.</p>
+            </div>
+            </article>
+
+            <section id="other">
+              <article>
+                <h3>Duis euismod vitae bibendum</h3>
+                <h2> In malesuada quam vel mi aliquam vehicula.</h2>
+                <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper felis, venenatis accumsan mauris mauris ac erat.</p>
+              </article>
+              <article>
+                <h3>Duis euismod vitae bibendum</h3>
+                <h2> In malesuada quam vel mi aliquam vehicula.</h2>
+                <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper felis, venenatis accumsan mauris mauris ac erat.</p>
+              </article>
+              <article>
+                <h3>Duis euismod vitae bibendum</h3>
+                <h2> In malesuada quam vel mi aliquam vehicula.</h2>
+                <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper felis, venenatis accumsan mauris mauris ac erat.</p>
+              </article>
+            </section>
+            
           </section>
+
         <!-- ============== /end SECTION #showcase ==================== -->
 
         <!-- ================= SECTION #news ======================== -->
@@ -215,9 +196,9 @@
         <!-- ============== /end news ====================== -->
 
         <!-- ============= SECTIONS #agenda. #maps, #forum ============== -->
-          <div class="row"> 
+
             <!-- =================== SECTION agenda ============== -->
-              <section id="agenda" class="col-sm-4">
+              <section id="agenda">
                 <h1>AGENDA</h1>
                   <article class="first-agenda">
                     <date>10 sept <span>2014</span></date>
@@ -235,13 +216,13 @@
                     <date>10 oct <span>2014</span></date>
                     <h3>Third agenda title</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque eum incidunt ex temporibus enim at nesciunt iste molestiae eius! Velit qui accusantium aliquam pariatur ipsum mollitia voluptatibus eum fuga.</p>
-                    <img class="img-responsive" src="img/images/agenda-demo.jpg" alt="">
+                    <!-- <img class="img-responsive" src="img/images/agenda-demo.jpg" alt=""> -->
                   </article>
               </section>
             <!-- =================== /end agenda ============== -->
 
             <!-- =================== SECTION maps ============== -->
-              <section id="maps" class="col-sm-4">
+              <section id="maps">
                 <h1>OÙ PRATIQUER</h1>
                   <article class="map">
                     <h3>Map title</h3>
@@ -252,26 +233,56 @@
             <!-- =================== /end maps ============== -->
 
             <!-- =================== SECTION forum ============== -->
-              <section id="forum" class="col-sm-4">
+              <section id="forum"><!--col-->
                 <h1>FORUM</h1>
-                  <article class="first-forum">
-                    <img class="img-responsive" src="img/images/forum-portrait-icon.jpg" alt="">
-                    <h3>First Discussion title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque eum incidunt ex temporibus enim at nesciunt iste molestiae eius! Velit qui accusantium aliquam pariatur ipsum mollitia voluptatibus eum fuga.</p>
-                  </article>
-                  <article class="second-forum">
-                    <img class="img-responsive" src="img/images/forum-portrait-icon.jpg" alt="">
-                    <h3>Second Discussion title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque eum incidunt ex temporibus enim at nesciunt iste molestiae eius! Velit qui accusantium aliquam pariatur ipsum mollitia voluptatibus eum fuga.</p>
-                  </article>
-                  <article class="third-forum">
-                    <img class="img-responsive" src="img/images/forum-portrait-icon.jpg" alt="">
-                    <h3>Third Discussion title</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, cumque eum incidunt ex temporibus enim at nesciunt iste molestiae eius! Velit qui accusantium aliquam pariatur ipsum mollitia voluptatibus eum fuga.</p>
-                  </article>
+                <div class="list-group">
+                  
+
+                  <a href="#" class="list-group-item">
+                    <div class="avatar">
+                      <img src="img/images/forum-portrait-icon.jpg" alt="">
+                      <span class="author">Auteur</span>
+                    </div>
+                    <p class="forum-post">
+                      <span class="forum">Rubrique</span> / <span class="topic">Discussion</span> / <span class="post">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</span>
+                    </p>
+                  </a>
+
+                  <a href="#" class="list-group-item">
+                    <div class="avatar">
+                      <img src="img/images/forum-portrait-icon.jpg" alt="">
+                      <span class="author">AuteurLoremIpsum</span>
+                    </div>
+                    <p class="forum-post">
+                      <span class="forum">Rubrique</span> / <span class="topic">Discussion</span> / <span class="post">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</span>
+                    </p>
+                  </a>
+
+                  <a href="#" class="list-group-item">
+                    <div class="avatar">
+                      <img src="img/images/forum-portrait-icon.jpg" alt="">
+                      <span class="author">Auteur</span>
+                    </div>
+                    <p class="forum-post">
+                      <span class="forum">Rubrique</span> / <span class="topic">Discussion</span> / <span class="post">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</span>
+                    </p>
+                  </a>
+
+                  <a href="#" class="list-group-item">
+                    <div class="avatar">
+                      <img src="img/images/forum-portrait-icon.jpg" alt="">
+                      <span class="author">Auteur</span>
+                    </div>
+                    <p class="forum-post">
+                      <span class="forum">Rubrique</span> / <span class="topic">Discussion</span> / <span class="post">Lorem ipsum dolor sit amet, consectetur adipisicing elit ...</span>
+                    </p>
+                  </a>
+
+                </div>
+
               </section>
             <!-- =================== /end forum ============== -->
-          </div><!-- /end row -->
+         
         <!-- ========== /end SECTIONS #agenda. #maps, #forum ============ -->
 
         <!-- =================== color samples ============== -->
@@ -288,29 +299,39 @@
           </div>
         <!-- =================== /end color samples ========= -->
 
+      </div> <!-- /end bg-content row -->
 
         <!-- ================= footer ====================== -->
-          <footer class="row footer-container">
+          <footer class="footer-container">
             
-              <div class="col-sm-4">
+              <div>
                 <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper</p>
               </div>
-              <div class="col-sm-4">
+              <div>
                 <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper</p>
               </div>
-              <div class="col-sm-4">
+              <div>
                 <p>Ut aliquet consequat velit eget feugiat. Nam tempus, nunc sit amet posuere hendrerit, sem orci ullamcorper</p>
               </div>
             
           </footer>
         <!-- ============== /end footer ==================== -->
-      </div> <!-- /end bg-content row -->
 
-    </div>
-    <!-- =============== end of main container =========== -->
+    </div> <!-- container -->
+    <!-- =============== end of container =========== -->
 
 
 	  <!-- ============== scripts ================= -->
+    <!-- plain javascript toggle display:none -->
+    <script>
+      function toggle_visibility(id) {
+         var e = document.getElementById(id);
+         if(e.style.display == 'block')
+            e.style.display = 'none';
+         else
+            e.style.display = 'block';
+      }
+    </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="js/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

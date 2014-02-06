@@ -6,7 +6,14 @@
 
 		<title>Y Service Club - index</title>
 		<!-- links -->
-		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="../css/styles.css">
+		<script>
+			function toggle_visibility(id) {
+				var e = document.getElementById(id);
+				e.style.display = ((e.style.display!='none') ? 'none' : 'block');
+			}
+		</script>
+
 	</head>
 	 
 	<body>
@@ -15,43 +22,61 @@
 
 		<header class="top-nav">
 
-				<a class="logo" href="#">
-					<!-- <h1 class="logo">OIYSC logo</h1> -->
-					<img src="img/OIYSC-logo.png" alt="OIYSC logo">
-				</a>
-				<nav class="main-menu" role="primary">
-					<ul>
-						<li class="projects"><a href="#">How we serve</a>
-							<ul class="submenu">
-								<li><a href="">international</a></li>
-								<li><a href="">community</a></li>
-							</ul>
-						</li>
-						<li class="calendar"><a href="#">Calendar</a>
-							<ul class="submenu">
-								<li><a href="">Events</a></li>
-								<li><a href="">Meetings</a></li>
-							</ul>
-						</li>
-						<li><a href="#">Shop/Donate</a></li>
-					</ul>
-					<ul class="info-nav" >
-						<li class="info-menu"><a href="#">About Us/FAQ</a></li>
-						<li class="info-menu"><a href="#">Contact</a></li>
-					</ul>
-				</nav>
+				<div class="collapse-menu">
+					<a class="collapse-logo" href="#"><img src="../img/OIYSC-logo.png" alt="OIYSC logo"></a>
+					<a href="#" class="menu-icon" onclick="toggle_visibility('collapse')">&#9776;</a>
+				</div>
+
+				<div id="collapse">
+	
+					<!-- logo -->
+					<a class="logo" href="#"><img src="../img/OIYSC-logo.png" alt="OIYSC logo"></a>
+
+					<!-- top menu -->
+					<nav class="top-menu">
+						<a href="#">donate</a><!--  
+					 --><a href="#" class="about-sm">about</a><!--
+					 --><a href="#" class="about" >about us/faq</a><!--
+					 --><a href="#">contact</a>
+					</nav>
+
+					<!-- main menu -->
+					<nav class="main-menu" role="primary">
+							<!-- news -->
+							<a href="#" class="news">News</a><!-- remove white space between inline blocks
+						 == projects ==
+						 --><div class="dropdown-menu projects">
+								<a href="#" id="project-menu" class="projects-link">How we serve</a>
+									<div id="project-submenu" class="submenu">
+										<a href="#">international</a>
+										<a href="#">community</a>
+									</div>
+							</div><!-- remove white space between inline blocks
+						==	calendar ==
+						--><div class="dropdown-menu calendar">
+								<a href="#" class="calendar-link">Calendar</a>
+									<div id="calendar-submenu" class="submenu">
+										<a href="#">Events</a>
+										<a href="#">Meetings</a>
+									</div>
+							</div><!-- remove white space between inline blocks
+						==	 shop ==
+						 --><a href="#" class="shop">Shop</a>
+					</nav>
+
+				</div>
 
 		</header> <!-- row -->
 
 			<div class="carousel">
-				<img src="img/villageAfrique.jpg" alt="">
+					<img src="../img/villageAfrique.jpg" alt="">
 			</div>
 
 		<div class="page-content">
 
 			
 			<div class="left-sidebar">
-				<img src="img/circle-pencils.png" alt="">
+				<img src="../img/circle-pencils.png" alt="">
 				<h3>Left sidebar</h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, maxime, perspiciatis, enim cumque veritatis consequatur numquam aliquam voluptates qui corporis dicta alias ullam maiores mollitia placeat perferendis quae at rerum.</p>
 			</div>
@@ -75,7 +100,7 @@
 
 	</div>
 
-			<img src="img/footer-arc.png" alt="">
+			<img src="../img/footer-arc.png" alt="">
 
 	</body>
 </html>
