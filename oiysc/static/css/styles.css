@@ -217,10 +217,28 @@ table {
     margin: 0 auto;
   }
 }
+@media screen and (min-width: 992px) {
+  .container {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1148px;
+    margin: 0 auto;
+  }
+}
 .row {
   float: left;
   width: 100%;
   clear: both;
+}
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 html {
   background: url(../img/fabric_1.png);
@@ -255,6 +273,18 @@ h6 {
     margin: 0 auto;
   }
 }
+@media screen and (min-width: 992px) {
+  .wrapper {
+    width: 85%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .wrapper {
+    max-width: 1148px;
+    margin: 0 auto;
+  }
+}
 div.page-content {
   float: left;
   width: 100%;
@@ -267,6 +297,7 @@ div.page-content div.left-sidebar {
   margin: 0 0 1em;
   padding-left: 10px;
   padding-right: 10px;
+  display: none;
 }
 @media screen and (min-width: 768px) {
   div.page-content div.left-sidebar {
@@ -276,9 +307,18 @@ div.page-content div.left-sidebar {
 div.page-content div.left-sidebar img {
   width: 50%;
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
+  div.page-content div.left-sidebar {
+    display: block;
+    width: 33.33333333333333%;
+  }
   div.page-content div.left-sidebar img {
     width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  div.page-content div.left-sidebar {
+    width: 25%;
   }
 }
 div.page-content div.middle {
@@ -287,6 +327,10 @@ div.page-content div.middle {
   margin: 0 0 1em;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #eeeeee;
+  padding: 15px;
+  border: 1px solid rgba(111, 111, 111, 0.3);
+  border-radius: 0;
 }
 @media screen and (min-width: 768px) {
   div.page-content div.middle {
@@ -294,7 +338,40 @@ div.page-content div.middle {
   }
 }
 div.page-content div.middle h3 {
-  font-size: 5em;
+  font-size: 3.5em;
+}
+div.page-content div.middle img {
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(111, 111, 111, 0.8);
+  width: 50%;
+  float: right;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  div.page-content div.middle {
+    border-radius: 10px;
+    width: 66.66666666666666%;
+  }
+  div.page-content div.middle h3 {
+    font-size: 3em;
+  }
+  div.page-content div.middle img {
+    box-shadow: 0 2px 5px 0 rgba(111, 111, 111, 0.8);
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  div.page-content div.middle {
+    width: 50%;
+  }
+  div.page-content div.middle h3 {
+    font-size: 3.5em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  div.page-content div.middle h3 {
+    font-size: 4em;
+  }
 }
 div.page-content div.right-sidebar {
   width: 100%;
@@ -302,10 +379,35 @@ div.page-content div.right-sidebar {
   margin: 0 0 1em;
   padding-left: 10px;
   padding-right: 10px;
+  text-align: center;
+  padding: 0 30px;
 }
 @media screen and (min-width: 768px) {
   div.page-content div.right-sidebar {
     width: 25%;
+  }
+}
+div.page-content div.right-sidebar img {
+  max-width: 300px;
+}
+div.page-content div.right-sidebar .sidebar-text {
+  text-align: left;
+  display: none;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  div.page-content div.right-sidebar {
+    padding: 0 20px;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 992px) {
+  div.page-content div.right-sidebar {
+    width: 25%;
+  }
+  div.page-content div.right-sidebar .sidebar-text {
+    display: inline-block;
   }
 }
 img {
@@ -314,6 +416,20 @@ img {
 }
 footer {
   text-align: center;
+  float: left;
+  width: 100%;
+  clear: both;
+}
+footer img {
+  display: block;
+  margin: auto;
+}
+footer .books {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  width: 100%;
+  margin-top: 30px;
 }
 header.top-nav {
   float: left;
@@ -340,7 +456,7 @@ header.top-nav ul {
 }
 @media screen and (min-width: 768px) {
   header.top-nav {
-    margin-top: 20px;
+    margin-top: 0;
   }
 }
 header.top-nav #collapse {
@@ -384,6 +500,7 @@ header.top-nav a.logo {
   padding-right: 10px;
   display: none;
   padding: 0;
+  margin-bottom: 10px;
 }
 @media screen and (min-width: 768px) {
   header.top-nav a.logo {
@@ -394,6 +511,7 @@ header.top-nav a.logo {
   header.top-nav a.logo {
     display: inline-block;
     width: 100px;
+    padding-top: 15px;
   }
 }
 @media screen and (min-width: 992px) {
@@ -411,7 +529,7 @@ header.top-nav a.logo img {
 }
 @media screen and (min-width: 768px) {
   header.top-nav a.logo img {
-    width: 100%;
+    width: 65%;
   }
 }
 header.top-nav nav.top-menu {
@@ -421,11 +539,12 @@ header.top-nav nav.top-menu {
   padding-left: 10px;
   padding-right: 10px;
   font-size: .7em;
-  line-height: 2.4em;
+  line-height: 1.6em;
   text-align: center;
   padding-left: 0;
   padding-right: 0;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 @media screen and (min-width: 768px) {
   header.top-nav nav.top-menu {
@@ -443,13 +562,13 @@ header.top-nav nav.top-menu {
 @media screen and (min-width: 992px) {
   header.top-nav nav.top-menu {
     font-size: .8em;
-    line-height: 2.6em;
+    line-height: 1.8em;
   }
 }
 @media screen and (min-width: 1200px) {
   header.top-nav nav.top-menu {
     font-size: .85em;
-    line-height: 3em;
+    line-height: 2em;
   }
 }
 header.top-nav nav.top-menu a {
@@ -556,6 +675,7 @@ header.top-nav nav.main-menu .news:hover {
 }
 header.top-nav nav.main-menu .dropdown-menu {
   position: relative;
+  z-index: 1000;
 }
 header.top-nav nav.main-menu .dropdown-menu.projects .projects-link {
   background-color: rgba(97, 180, 187, 0.3);
@@ -671,17 +791,136 @@ header.top-nav nav.main-menu .shop:hover {
     border-bottom: 3px solid rgba(218, 52, 39, 0.3);
   }
 }
-/*media queries*/
+.carousel-wrapper {
+  float: left;
+  width: 100%;
+  clear: both;
+}
+.carousel-wrapper .carousel.rslides_container {
+  margin-bottom: 50px;
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.carousel-wrapper .carousel.rslides_container ul.rslides {
+  /*! http://responsiveslides.com v1.54 by @viljamis */
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  /*! http://responsiveslides.com v1.54 by @viljamis */
+}
+.carousel-wrapper .carousel.rslides_container ul.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.carousel-wrapper .carousel.rslides_container ul.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+.carousel-wrapper .carousel.rslides_container ul.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
+}
+.carousel-wrapper .carousel.rslides_container ul.rslides .caption {
+  display: block;
+  float: left;
+  z-index: 2;
+  text-shadow: 0 1px 3px #1f1f1f, 0 -1px 3px #1f1f1f;
+  color: #eeeeee;
+  background-color: #3b3530;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 58px;
+  margin: 0;
+  max-width: none;
+  font-size: 1em;
+}
+.carousel-wrapper .carousel.rslides_container ul.rslides .caption h1 {
+  font-size: 1.75em;
+  font-family: londrina, Helvetica, Arial, sans-serif;
+  margin: 0;
+  text-shadow: 0 1px 5px #1f1f1f;
+}
 @media screen and (min-width: 768px) {
-  .carousel {
-    display: block;
+  .carousel-wrapper .carousel.rslides_container ul.rslides .caption {
+    background-color: transparent;
+    margin: 0 38px;
+    position: absolute;
+    font-size: 1.15em;
   }
-  .carousel img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    -webkit-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.5);
+  .carousel-wrapper .carousel.rslides_container ul.rslides .caption h1 {
+    font-size: 2em;
   }
+}
+@media screen and (min-width: 992px) {
+  .carousel-wrapper .carousel.rslides_container ul.rslides .caption {
+    font-size: 1.30em;
+  }
+  .carousel-wrapper .carousel.rslides_container ul.rslides .caption h1 {
+    font-size: 2.25em;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .carousel-wrapper .carousel.rslides_container ul.rslides .caption {
+    font-size: 1.45em;
+  }
+  .carousel-wrapper .carousel.rslides_container ul.rslides .caption h1 {
+    font-size: 2.5em;
+  }
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav {
+  position: absolute;
+  float: left;
+  z-index: 3;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  opacity: 0.2;
+  text-indent: -9999px;
+  overflow: hidden;
+  bottom: 5%;
+  left: 0;
+  background: #000000 url("../img/themes.gif") no-repeat left 50%;
+  width: 38px;
+  height: 100px;
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav.prev {
+  border-radius: 0 20px 20px 0;
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav.next {
+  border-radius: 20px 0 0 20px;
+}
+@media screen and (min-width: 768px) {
+  .carousel-wrapper .carousel.rslides_container .large-btns_nav {
+    height: 200px;
+  }
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav:hover {
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .carousel-wrapper .carousel.rslides_container .large-btns_nav:hover {
+    opacity: 0.5;
+  }
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav:active {
+  opacity: 0.8;
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav.next {
+  left: auto;
+  background-position: right 50%;
+  right: 0;
+}
+.carousel-wrapper .carousel.rslides_container .large-btns_nav:focus {
+  outline: none;
 }
