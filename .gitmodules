@@ -1,0 +1,3 @@
+[submodule "YSC-boot"]
+	path = YSC-boot
+	url = git://github.com/plsg/YSC-boot.git
